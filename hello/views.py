@@ -11,6 +11,7 @@ def index(request):
 def poll(request, pollName):
     print 'user requested poll page with name ' + pollName
     print type(request)
+    return render(request, 'index.html')
 
 def db(request):
     print request
