@@ -10,7 +10,7 @@ def index(request):
 
 def poll(request):
     print 'user requested poll page'
-    print 'with request ' + request
+    print type(request)
 
 def db(request):
     print request
