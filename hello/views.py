@@ -8,8 +8,8 @@ def index(request):
     # return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
 
-def poll(request):
-    print 'user requested poll page'
+def poll(request, pollName):
+    print 'user requested poll page with name ' + pollName
     print type(request)
 
 def db(request):
