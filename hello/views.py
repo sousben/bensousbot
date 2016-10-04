@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -10,7 +12,11 @@ def index(request):
 
 def oauth(request):
     print 'new app install what else'
-    print request.GET('code')
+    print request.GET
+    getDict = request.GET
+    getDict = json.loads(getDict)
+    print type(getDict)
+    print getDict('code')
     # https://slack.com/api/oauth.access?
 
 def poll(request, pollName):
