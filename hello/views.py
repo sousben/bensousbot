@@ -12,8 +12,8 @@ def index(request):
 
 def oauth(request):
     print 'new app install what else'
-    print request.GET
-    getDict = request.GET
+    print request.body
+    getDict = request.body
     getDict = json.loads(getDict)
     print type(getDict)
     print getDict('code')
