@@ -10,12 +10,12 @@ def index(request):
 
 def oauth(request):
     print 'new app install what else'
-    print request.POST
+    print request.GET
 
 def poll(request, pollName):
     print 'user requested poll page with name ' + pollName
     print type(request)
-    print request.POST
+    print request.GET
     return render(request, 'index.html')
 
 def db(request):
