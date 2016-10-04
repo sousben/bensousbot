@@ -10,7 +10,8 @@ def index(request):
 
 def oauth(request):
     print 'new app install what else'
-    print request.GET
+    print request.GET('code')
+    # https://slack.com/api/oauth.access?
 
 def poll(request, pollName):
     print 'user requested poll page with name ' + pollName
