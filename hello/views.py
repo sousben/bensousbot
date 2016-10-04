@@ -8,6 +8,9 @@ def index(request):
     # return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
 
+def oauth(request):
+    print 'new app install what else'
+
 def poll(request, pollName):
     print 'user requested poll page with name ' + pollName
     print type(request)
