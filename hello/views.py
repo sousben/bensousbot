@@ -12,11 +12,10 @@ def index(request):
 
 def oauth(request):
     print 'new app install what else'
-    print request.body
-    getDict = request.body
-    getDict = json.loads(getDict)
+    print request.GET
+    getDict = request.GET
     print type(getDict)
-    print getDict('code')
+    print getDict.get('code','0')
     # https://slack.com/api/oauth.access?
 
 def poll(request, pollName):
