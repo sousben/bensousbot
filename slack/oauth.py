@@ -25,6 +25,7 @@ def oauth(request):
     serialized_data = urllib2.urlopen(url).read()
     data = json.loads(serialized_data)
     
+    print data
     print 'Request successful with result:' 
     err = data.get('error','')
     print err
