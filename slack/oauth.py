@@ -25,7 +25,9 @@ def oauth(request):
     serialized_data = urllib2.urlopen(url).read()
     data = json.loads(serialized_data)
     
-    print data
+    print 'Request successful with result:' + data
+
+    return HttpResponse('Installation Successful!')
 
     # https://slack.com/api/oauth.access?
 
