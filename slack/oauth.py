@@ -31,7 +31,7 @@ def oauth(request):
     
     if (err == ''):
       return HttpResponse('Installation Successful!')
-    else
+    else:
       return HttpResponse('Installation Unsuccessful with error: ' + err)
 
     # https://slack.com/api/oauth.access?
