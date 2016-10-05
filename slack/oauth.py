@@ -26,7 +26,7 @@ def oauth(request):
     data = json.loads(serialized_data)
     
     print 'Request successful with result:' 
-    print data
+    print data('error')
 
     return HttpResponse('Installation Successful!')
 
