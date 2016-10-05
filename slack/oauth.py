@@ -3,8 +3,6 @@ import json
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Greeting
-
 def oauth(request):
     print 'new app install what else'
     print request.GET
