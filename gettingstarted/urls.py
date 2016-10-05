@@ -4,6 +4,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 import hello.views
+import slack.oauth
 
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
