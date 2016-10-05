@@ -1,11 +1,11 @@
 import urllib2
 import json
+import os
 
 from django.shortcuts import render
 from django.http import HttpResponse
 
 ###VARIABLES THAT YOU NEED TO SET MANUALLY IF NOT ON HEROKU#####
-## Edited by Jerem
 try:
 	CLIENT_ID = os.environ['SLACK_CLIENT_ID'] 
 	CLIENT_SECRET = os.environ['SLACK_CLIENT_SECRET']
