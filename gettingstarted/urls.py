@@ -13,6 +13,6 @@ urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^oauth', hello.views.oauth),
+    url(r'^oauth', slack.oauth.oauth),
     url(r'^poll/(?P<pollName>\w+)/', hello.views.poll)
 ]
