@@ -25,7 +25,8 @@ def oauth(request):
     serialized_data = urllib2.urlopen(url).read()
     data = json.loads(serialized_data)
     
-    print 'Request successful with result:' + data
+    print 'Request successful with result:' 
+    print data
 
     return HttpResponse('Installation Successful!')
 
