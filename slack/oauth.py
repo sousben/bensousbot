@@ -15,31 +15,23 @@ except:
 ###############################################################
 
 def oauth(request):
-    print 'new app install what else'
-    print request.GET
     getDict = request.GET
     code = getDict.get('code','0')
-    print code
     
     url = 'https://slack.com/api/oauth.access?client_id='+CLIENT_ID+'&client_secret='+CLIENT_SECRET+'&code='+code
     serialized_data = urllib2.urlopen(url).read()
     data = json.loads(serialized_data)
-    
-    print data
-    print 'Request successful with result:' 
     err = data.get('error','')
-    print err
     
     if (err == ''):
+      print 'New Installation - Successful!'
       return HttpResponse('Installation Successful!')
     else:
-      return HttpResponse('Installation Unsuccessful with error: ' + err)
-
-    # https://slack.com/api/oauth.access?
+      print 'New Installation - unsuccessful with error: ' + err
+      return HttpResponse('Installation unsuccessful with error: ' + err)
 
 def poll(request, pollName):
     print 'user requested poll page with name ' + pollName
     print type(request)
     print request.GET
-    return render(request, 'index.html')
-
+    return HttpResponse('Poll Updated')
