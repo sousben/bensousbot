@@ -1,6 +1,7 @@
 import urllib2
 import json
 import os
+import slack.pollbot
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -28,6 +29,7 @@ def oauth(request):
       return HttpResponse('Installation Successful!')
     else:
       print 'New Installation - unsuccessful with error: ' + err
+      init_bot()
       return HttpResponse('Installation unsuccessful with error: ' + err)
 
 def poll(request, pollName):
