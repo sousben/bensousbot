@@ -29,7 +29,7 @@ def oauth(request):
       return HttpResponse('Installation Successful!')
     else:
       print 'New Installation - unsuccessful with error: ' + err
-      init_bot()
+      slack.pollbot.init_bot()
       return HttpResponse('Installation unsuccessful with error: ' + err)
 
 def poll(request, pollName):
