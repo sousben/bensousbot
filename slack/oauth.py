@@ -1,3 +1,4 @@
+import slack.pollDb
 import urllib2
 import json
 import os
@@ -25,6 +26,7 @@ def oauth(request):
     
     if (err == ''):
       print 'New Installation - Successful!'
+      
       return HttpResponse('Installation Successful!')
     else:
       print 'New Installation - unsuccessful with error: ' + err
