@@ -25,8 +25,7 @@ def createPollDbTables():
   except:
     print "Error: ", sys.exc_info()[0]
   
-  cur.execute("""SELECT table_name FROM information_schema.tables
-       WHERE table_schema = 'public'""")
+  cur.execute("""SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'""")
   for table in cur.fetchall():
     print(table)
     
