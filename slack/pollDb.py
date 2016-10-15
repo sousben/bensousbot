@@ -25,11 +25,14 @@ def createPollDbTables():
   except:
     print "Error: ", sys.exc_info()[0]
   
+  cursor.execute("select relname from pg_class where relkind='r' and relname !~ '^(pg_|sql_)';")
+  print cursor.fetchall()
+  
   # Use all the SQL you like
-  cur.execute("SELECT * FROM distributors")
+  #cur.execute("SELECT * FROM distributors")
 
   # print all the first cell of all the rows
-  for row in cur.fetchall():
-    print row[0]
+  #for row in cur.fetchall():
+  #  print row[0]
 
   conn.close()
