@@ -25,8 +25,8 @@ def createPollDbTables():
   except:
     print "Error: ", sys.exc_info()[0]
   
-  cursor.execute("select relname from pg_class where relkind='r' and relname !~ '^(pg_|sql_)';")
-  print cursor.fetchall()
+  cur.execute("select relname from pg_class where relkind='r' and relname !~ '^(pg_|sql_)';")
+  print cur.fetchall()
   
   # Use all the SQL you like
   #cur.execute("SELECT * FROM distributors")
