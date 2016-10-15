@@ -20,10 +20,7 @@ def createPollDbTables():
   cur = conn.cursor()
 
   try:
-    cur.execute("""CREATE TABLE distributors (
-    did     integer CHECK (did > 100),
-    name    varchar(40)
-);""")
+    cur.execute("""INSERT INTO distributors (125,""Jeremy"")""")
   except:
     print "I can't create that table!"
   
