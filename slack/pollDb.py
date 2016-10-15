@@ -19,7 +19,6 @@ def createPollDbTables():
   #  you execute all the queries you need
   cur = conn.cursor()
 
-  cur = conn.cursor()
   try:
     cur.execute("""DROP DATABASE foo_test""")
   except:
