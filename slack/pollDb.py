@@ -22,7 +22,7 @@ def createPollDbTables():
   try:
     cur.execute("INSERT INTO distributors (did, name) VALUES (125,'Jeremy');")
   except:
-    print "I can't create that table!"
+    print "Error: ", sys.exc_info()[0]
   
   # Use all the SQL you like
   #cur.execute("SELECT * FROM YOUR_TABLE_NAME")
