@@ -19,15 +19,17 @@ def createPollDbTables():
   # you must create a Cursor object. It will let
   #  you execute all the queries you need
   cur = conn.cursor()
-
+  
+  cur.execute("""SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'""")
+  for table in cur.fetchall():
+    print(table)
+    
   try:
     cur.execute("INSERT INTO distributors (did, distributor) VALUES (125,'Jeremy');")
   except:
     print "Error: ", sys.exc_info()[0]
   
-  cur.execute("""SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'""")
-  for table in cur.fetchall():
-    print(table)
+
     
   # Use all the SQL you like
   #cur.execute("SELECT * FROM distributors")
