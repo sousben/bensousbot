@@ -26,7 +26,7 @@ def oauth(request):
     
     if (err == ''):
       print 'New Installation - Successful!'
-      createPollDbTables()
+      pollDb.createPollDbTables()
       return HttpResponse('Installation Successful!')
     else:
       print 'New Installation - unsuccessful with error: ' + err
