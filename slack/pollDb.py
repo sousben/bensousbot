@@ -20,7 +20,7 @@ def createPollDbTables():
   cur = conn.cursor()
 
   try:
-    cur.execute("INSERT INTO distributors (125,'Jeremy');")
+    cur.execute("INSERT INTO distributors (did, name) VALUES (125,'Jeremy');")
   except:
     print "I can't create that table!"
   
