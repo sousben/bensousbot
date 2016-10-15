@@ -20,9 +20,12 @@ def createPollDbTables():
   cur = conn.cursor()
 
   try:
-    cur.execute("""DROP DATABASE foo_test""")
+    cur.execute("""CREATE TABLE distributors (
+    did     integer CHECK (did > 100),
+    name    varchar(40)
+);""")
   except:
-    print "I can't drop our test database!"
+    print "I can't create that table!"
   
   # Use all the SQL you like
   #cur.execute("SELECT * FROM YOUR_TABLE_NAME")
