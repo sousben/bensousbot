@@ -5,16 +5,16 @@ import urlparse
 urlparse.uses_netloc.append("postgres")
 url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
-conn = psycopg2.connect(
+def createPollDbTables():
+  print 'Creating tables for Poll database'
+
+  conn = psycopg2.connect(
     database=url.path[1:],
     user=url.username,
     password=url.password,
     host=url.hostname,
-    port=url.port
-)
-
-def createPollDbTables():
-  print 'Creating tables for Poll database'
+    port=url.port)
+    
   # you must create a Cursor object. It will let
   #  you execute all the queries you need
   cur = conn.cursor()
