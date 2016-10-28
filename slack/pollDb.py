@@ -30,7 +30,7 @@ def createPollDbTables():
     cur.execute("INSERT INTO distributors (did, distributor) VALUES (125,'Jeremy');")
   except:
     print "Error: ", sys.exc_info()[0]
-    log += "Error: " + sys.exc_info()[0]
+    log += "Error: " + str(sys.exc_info()[0])
   
 
     
