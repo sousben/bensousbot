@@ -20,7 +20,6 @@ def createPollDbTables():
   # you must create a Cursor object. It will let
   #  you execute all the queries you need
   cur = conn.cursor()
-  cur.execute("
   cur.execute("""SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'""")
   for table in cur.fetchall():
     print(table)
