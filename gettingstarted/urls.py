@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^oauth', slack.oauth.oauth),
+    url(r'^newdb', slack.oauth.newdb),
     url(r'^poll/(?P<pollName>\w+)/', slack.oauth.poll)
 ]
