@@ -8,6 +8,7 @@ url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 def createPollDbTables():
   print 'Creating tables for Poll database'
+  log = 'Creating tables for Poll database'
 
   conn = psycopg2.connect(
     database=url.path[1:],
@@ -23,11 +24,13 @@ def createPollDbTables():
   cur.execute("""SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'""")
   for table in cur.fetchall():
     print(table)
+    log = log + str(table)
     
   try:
     cur.execute("INSERT INTO distributors (did, distributor) VALUES (125,'Jeremy');")
   except:
     print "Error: ", sys.exc_info()[0]
+    log += "Error: " + sys.exc_info()[0]
   
 
     
@@ -39,3 +42,4 @@ def createPollDbTables():
   #  print row[0]
 
   conn.close()
+  return log
