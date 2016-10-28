@@ -5,7 +5,6 @@ admin.autodiscover()
 
 import hello.views
 import slack.oauth
-import slack.pollDb
 
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
@@ -16,6 +15,6 @@ urlpatterns = [
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^oauth', slack.oauth.oauth),
-    url(r'^newdb', slack.pollDb.createPollDbTables),
+    url(r'^newdb', slack.oauth.newDb),
     url(r'^poll/(?P<pollName>\w+)/', slack.oauth.poll)
 ]
