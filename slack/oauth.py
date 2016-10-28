@@ -32,6 +32,9 @@ def oauth(request):
       print 'New Installation - unsuccessful with error: ' + err
       return HttpResponse('Installation unsuccessful with error: ' + err)
 
+def newDb(request):
+    slack.pollDb.createPollDbTables()
+
 def poll(request, pollName):
     print 'user requested poll page with name ' + pollName
     print type(request)
